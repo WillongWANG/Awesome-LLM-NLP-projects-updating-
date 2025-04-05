@@ -51,13 +51,13 @@ async def create_item(request: Request):
 
 if __name__ == '__main__':
     '''
-    tokenizer = AutoTokenizer.from_pretrained("E:\ChatGLM-6B-main\self-chatglm", trust_remote_code=True)
-    model = AutoModel.from_pretrained("E:\ChatGLM-6B-main\self-chatglm", trust_remote_code=True).quantize(4).half().cuda()
+    tokenizer = AutoTokenizer.from_pretrained("self-chatglm", trust_remote_code=True)
+    model = AutoModel.from_pretrained("self-chatglm", trust_remote_code=True).quantize(4).half().cuda()
     model.eval()
     '''
     #$env:PATH += ";C:\winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-19.1.7-mingw-w64ucrt-12.0.0-r3\mingw64\bin"
-    tokenizer = AutoTokenizer.from_pretrained("E:\ChatGLM-6B-main\self-chatglm-6b-int4", trust_remote_code=True)
-    model = AutoModel.from_pretrained("E:\ChatGLM-6B-main\self-chatglm-6b-int4", trust_remote_code=True).half().cuda()
+    tokenizer = AutoTokenizer.from_pretrained("self-chatglm-6b-int4", trust_remote_code=True)
+    model = AutoModel.from_pretrained("self-chatglm-6b-int4", trust_remote_code=True).half().cuda()
     model.eval()
     
     uvicorn.run(app, host='0.0.0.0', port=8000, workers=1)
