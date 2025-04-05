@@ -1,6 +1,6 @@
 # Enhancing Local Knowledge Base QA with LLMs and RAG Integration
 
-This project aims to enhance local knowledge base QA by integrating **Chinese LLMs** like ChatGLM with **RAG** technology using **LangChain**. It enables users to upload unstructured documents and generates accurate, context-aware responses through similarity search. The project plans to evaluate various prompt strategies on the JD QA dataset and some literary texts using precision and ROUGE metrics for performance assessment.
+This project aims to enhance local knowledge base QA by integrating **Chinese LLMs** with **RAG** technology using **LangChain**. It enables users to upload unstructured documents and generates accurate, context-aware responses through similarity search. A **chatbot GUI** is built with **Gradio** to provide an intuitive user interface for interacting with the system. The project plans to evaluate various prompt strategies on the JD QA dataset and some literary texts using precision and ROUGE metrics for performance assessment.
 
 The project follows the fundamental RAG pipeline, which involves several key steps. First, the uploaded documents are split into smaller chunks based on predefined rules, making them easier to process. Next, these chunks are embedded and vectorized to facilitate similarity comparison. When a user submits a query, the system performs a similarity search on the embedded document vectors to identify the most relevant passages. The retrieved content is then combined with the user’s query to generate a coherent and accurate response.
 
@@ -20,7 +20,7 @@ model.eval()
 Then, deploy the ChatGLM model:
 
 ```
-# first create a virtual environment for deploying
+# first create a separate virtual environment for deploying
 pip install -r requirements_chatglm.txt
 python api.py
 ```
@@ -62,7 +62,8 @@ Default settings:
 You can adjust them accordingly.
 
 ```
-text_spliter = CharacterTextSplitter(chunk_size=256, chunk_overlap=0) #chunk_size & chunk_overlap to split the original or uploaded text
+#chunk_size & chunk_overlap to split the original or uploaded text
+text_spliter = CharacterTextSplitter(chunk_size=256, chunk_overlap=0) 
 
 # prompt
 QA_CHAIN_PROMPT = PromptTemplate.from_template("""根据以下已知信息回答问题：
@@ -72,6 +73,16 @@ QA_CHAIN_PROMPT = PromptTemplate.from_template("""根据以下已知信息回答
 
 retriever = db.as_retriever(search_kwargs={"k": 3}) #return 3 relevant docs
 ```
+
+This file by default processes a small JD Q&A dataset [jd_faq.csv](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/documents/jd_faq.csv) as an experiment. Each line is used to construct a langchain.schema.Document object and is then vectorized and stored. You can comment out the corresponding code snippet if needed.
+
+### ROUGE
+
+## Running Examples
+
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/1.png)
+
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/2.png)
 
 
 
