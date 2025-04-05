@@ -6,9 +6,9 @@ The project follows the fundamental RAG pipeline, which involves several key ste
 
 ## Chinese LLMs
 
-1. CHATGLM
+1.CHATGLM
 
-  Deploy ChatGLM-6B according to the [official website](https://github.com/THUDM/ChatGLM-6B). I deployed it locally on Windows using the API and directly loaded the quantized model. The INT4 quantized model only requires about 5.2GB of memory. Model quantization may lead to some performance loss, but through testing, ChatGLM-6B can still generate natural and fluent responses with 4-bit quantization. You are recommended to download the model directly from Hugging Face ([chatglm-6b](https://huggingface.co/THUDM/chatglm-6b/tree/main) or [chatglm-6b-int4](https://huggingface.co/THUDM/chatglm-6b-int4/tree/main)) and remember to install the GCC for the INT4 model.
+Deploy ChatGLM-6B according to the [official website](https://github.com/THUDM/ChatGLM-6B). I deployed it locally on Windows using the API and directly loaded the quantized model. The INT4 quantized model only requires about 5.2GB of memory. Model quantization may lead to some performance loss, but through testing, ChatGLM-6B can still generate natural and fluent responses with 4-bit quantization. You are recommended to download the model directly from Hugging Face ([chatglm-6b](https://huggingface.co/THUDM/chatglm-6b/tree/main) or [chatglm-6b-int4](https://huggingface.co/THUDM/chatglm-6b-int4/tree/main)) and remember to install the GCC for the INT4 model.
 
 ```
 # Replace the corresponding part in the original official api.py, where self-chatglm-6b-int4 is your local chatglm-6b or chatglm-6b-int4 directory
@@ -36,9 +36,9 @@ llm = ChatGLM(
      top_p=0.9)
 ```
 
-2. DeepSeek
+2.DeepSeek
 
-  To balance time and cost, I also used the DeepSeek API. According to the official website, the deepseek-chat model has been fully upgraded to DeepSeek-V3.
+To balance time and cost, I also used the DeepSeek API. According to the official website, the deepseek-chat model has been fully upgraded to DeepSeek-V3.
 
 ```
 from langchain_deepseek import ChatDeepSeek
