@@ -4,3 +4,9 @@ This project aims to enhance local knowledge base QA by integrating **Chinese LL
 
 The project follows the fundamental RAG pipeline, which involves several key steps. First, the uploaded documents are split into smaller chunks based on predefined rules, making them easier to process. Next, these chunks are embedded and vectorized to facilitate similarity comparison. When a user submits a query, the system performs a similarity search on the embedded document vectors to identify the most relevant passages. The retrieved content is then combined with the user’s query to generate a coherent and accurate response.
 
+## Chinese LLMs
+
+1. CHATGLM
+
+
+
