@@ -110,7 +110,7 @@ def load_documents_csv(file_path="documents/jd_faq.csv"):
             documents.append(doc)    
     return documents
 
-def load_documents(directory="E:\ChatGLM-6B-main\documents\\books"): #只上传txt文件
+def load_documents(directory="documents\\books"): #只上传txt文件
     #loader = TextLoader(directory,encoding='utf-8') 老是错
     loader = DirectoryLoader(directory)
     documents = loader.load()
@@ -156,6 +156,7 @@ def store_chroma(split_docs):
     except Exception as e:
         print(f"文件处理失败")
 #创建llm
+#from langchain_community.llms import ChatGLM
 # llm = ChatGLM(
 #     endpoint_url='http://127.0.0.1:8000',
 #     max_token=80000,
