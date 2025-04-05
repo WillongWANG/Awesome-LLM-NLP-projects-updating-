@@ -84,16 +84,13 @@ embedding_model_dict = {
 import pandas as pd
 from langchain.schema import Document
 def load_documents_csv(file_path="documents/jd_faq.csv"):
-    """ #只实验前100个问题吧
-    加载books下的文件，进行拆分
+    """ 
     :param directory:
     :return:
     """
     documents = []
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
-        # 只获取前100行
-        df = df.head(100)
         for index, row in df.iterrows():
             # 根据CSV结构调整这里
             question = row.get("问题", "")
