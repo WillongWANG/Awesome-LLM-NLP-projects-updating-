@@ -74,15 +74,31 @@ QA_CHAIN_PROMPT = PromptTemplate.from_template("""根据以下已知信息回答
 retriever = db.as_retriever(search_kwargs={"k": 3}) #return 3 relevant docs
 ```
 
-This file by default processes a small JD Q&A dataset [jd_faq.csv](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/documents/jd_faq.csv) as an experiment. Each line is used to construct a langchain.schema.Document object and is then vectorized and stored. You can comment out the corresponding code snippet if needed.
+This file by default processes a small JD Q&A dataset [jd_faq.csv](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/documents/jd_faq.csv) as an experiment.  
+Each line is used to construct a langchain.schema.Document object and is then vectorized and stored. You can comment out the corresponding code snippet if needed.
 
-### ROUGE
+### ROUGE 100
 
 ## Running Examples
 
 ![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/1.png)
 
 ![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/2.png)
+
+### Bugs
+
+Currently, only document uploads from a folder are supported, and all files in the folder will be fully uploaded, because:
+
+```
+# Not compatible with ChatDeepSeek
+loader = TextLoader(directory, encoding='utf-8')
+
+# Must use 
+loader = DirectoryLoader(directory)
+```
+
+
+
 
 
 
