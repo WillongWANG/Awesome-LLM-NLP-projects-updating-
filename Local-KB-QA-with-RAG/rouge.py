@@ -66,7 +66,6 @@ if not os.path.exists('VectorStore'): # 只有首次运行会执行这个代码�
 else:
     db = Chroma(persist_directory='VectorStore', embedding_function=embeddings)
 
-''''''
 from langchain_deepseek import ChatDeepSeek
 llm=ChatDeepSeek(
     model="deepseek-chat",
