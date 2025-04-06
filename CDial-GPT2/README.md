@@ -51,7 +51,7 @@ print("After loading:", model.transformer.wte.weight[0, :5])
 Infer:
 ```
 YOUR_MODEL_PATH: : the model path used for generation (i.e. fine-tuned model:.../model_training_args.bin)
-python infer.py --gpt2 --model_checkpoint YOUR_MODEL_PATH --datapath data/STC_test.json --out_path STC_result.txt  # Inference on a corpus
+python infer.py --gpt2 --model_checkpoint YOUR_MODEL_PATH --datapath data/STC_test.json --out_path STC_result.txt #Inference on a corpus
 python interact.py --gpt2 --model_checkpoint YOUR_MODEL_PATH  # Interact on the terminal
 ```
 
