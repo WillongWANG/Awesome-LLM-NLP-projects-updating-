@@ -1,6 +1,6 @@
 This project utilizes the [CDial-GPT2_LCCC-base](https://huggingface.co/thu-coai/CDial-GPT2_LCCC-base) Chinese dialogue pre-training model, fine-tuned on the large-scale Chinese dialogue dataset [STC](https://arxiv.org/abs/1503.02364)，and compares it with the [original project](https://github.com/thu-coai/CDial-GPT/tree/master?tab=readme-ov-file).
 
-![](https://github.com/WillongWang/Awesome-NLP-projects-updating-/blob/main/CDial-GPT2%20for%20Chinese%20dialogue/figures/inputs.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/CDial-GPT2%20for%20Chinese%20dialogue/figures/inputs.png)
 
 ## Requirements
 torch==1.4.0  
