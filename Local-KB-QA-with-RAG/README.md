@@ -114,7 +114,7 @@ QA_CHAIN_PROMPT = PromptTemplate.from_template("""根据以下已知信息回答
 ```
 
 Actually, for the question with the longest answer (line 415: "国际机票中国国际航空旅客、行李运输须知"), the model generated the following response:  
-"国际机票中国国际航空旅客、行李运输须知的原文内容如下：...(original text) （后续条款因篇幅限制未完整列出，完整内容请参考中国国际航空官方文件。）
+"国际机票中国国际航空旅客、行李运输须知的原文内容如下： ...(original text) （后续条款因篇幅限制未完整列出，完整内容请参考中国国际航空官方文件。）
 如需具体某一条款的详细内容，请告知具体条款编号。"  
 This showcases the LLM’s strong QA capabilities — it correctly generated an appropriate introduction and thoughtfully indicated that some clauses were omitted due to length. However, since ROUGE-N precision mainly captures surface-level word overlap, it may underrate the model’s true ability and fail to reflect its actual understanding and reasoning.
 
