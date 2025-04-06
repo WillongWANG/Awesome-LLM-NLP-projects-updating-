@@ -79,7 +79,7 @@ Each line is used to construct a langchain.schema.Document object and is then ve
 
 ### ROUGE
 
-This project uses ROUGE to evaluate the QA performance. Each record in jd_faq.csv contains a question and its corresponding answer. The LLM is prompted to answer each question, and the generated answer is compared with the original one to compute the ROUGE score.
+This project uses ROUGE to evaluate the QA performance. Each record in [jd_faq.csv](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Local-KB-QA-with-RAG/documents/jd_faq.csv) contains a question and its corresponding answer. The LLM is prompted to answer each question, and the generated answer is compared with the original one to compute the ROUGE score.
 
 ```
 # pip install jieba rouge_chinese
