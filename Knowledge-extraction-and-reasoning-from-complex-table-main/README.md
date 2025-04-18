@@ -47,44 +47,44 @@ To address this limitation, I further adopt **few-shot** and **chain-of-thought 
 **1. one-shot**  
 The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, different row and column from the demostration, respectively.   
 The first two answers are correct, but the third answer is sometimes correct and sometimes incorrect, indicating that the LLM still has limitations in accurately identifying the relative row and column positions of cells.
- 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/1.png)  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/2.png)  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/11.png)
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/12.png)
+
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/1.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/2.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/11.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/12.png)
 
 The following two questions are the same but with different demonstrations: the demonstration for the first question is the cell (HK$60) to the right of the answer cell, while the demonstration for the second question is the cell two cells to the right of the answer cell.   
 The answer corresponds to cell located **within a merged cell** (the question was incorrectly answered (HK$60) by **GPT-4o** in a **zero-shot** style in the original report).   
 The second answer is incorrect (HK$60), and even if the first answer is correct, it might be because the demonstration helped eliminate the wrong answer.
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/13.png)
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/14.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/13.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/14.png)
 
 **2. two-shot**  
 The answer corresponding to cell in the same row as the input is also answered correctly.
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/3.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/3.png)
 
 [Zero-shot COT](https://arxiv.org/pdf/2205.11916) for reasoning:  
 Task-agnostic and cheap  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/4.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/4.png)  
 
 Surprisingly, it produced the correct answer and recognized the footnotes simply by adding ```"Let's think step by step"```!  
 It seems there’s no need to follow the two-step approach outlined in the original paper — it managed to succeed in just one step.  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/1.pic.jpg)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/1.pic.jpg)
 
 [Few-shot COT](https://arxiv.org/pdf/2201.11903) for reasoning:  
 It can improve OOD generalization.  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/5.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/5.png)  
 
 The reasoning chain is correct, but it’s somewhat like cheating since both questions share the same footnotes.  
 
 Answering the following question requires a different footnote than the one used in the demonstration.  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/tree/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/6.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/6.png)  
 
 The reasoning chain is also correct.
 
