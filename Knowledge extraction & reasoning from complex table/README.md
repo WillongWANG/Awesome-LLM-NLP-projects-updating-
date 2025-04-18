@@ -2,10 +2,10 @@
 
 Large Language Models (LLMs) like **GPT-4 (ChatGPT)**, **AskyourPDF**, and **Unstract** have demonstrated notable capabilities in extracting and understanding information from tables in raw PDF. However, __complex tables often contain various advanced features such as multiple column items (columns that span more than one field), merged cells (span multiple rows or columns), parenthetical explanations, and superscripts with corresponding footnotes or annotations__, all of which pose significant challenges for table extraction and understanding. These features demand a high level of precision and contextual awareness from extraction tools. 
 
-[Final Report on Knowledge Extraction](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/Final%20Report%20on%20Knowledge%20Extraction.pdf) evaluates the performance of several LLMs in table knowledge extraction and understanding. Recognizing the inherent limitations of LLMs in processing unstructured table data, the report introduces a preprocessing pipeline that utilizes Optical Character Recognition (OCR) and rule-based methods to reconstruct tables into structured data formats, aiming to improve the accuracy and reliability of LLMs when handling tabular content. The code is in [code.py](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/code.py) based on screenshot table images.
+[Final Report on Knowledge Extraction](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/Final%20Report%20on%20Knowledge%20Extraction.pdf) evaluates the performance of several LLMs in table knowledge extraction and understanding. Recognizing the inherent limitations of LLMs in processing unstructured table data, the report introduces a preprocessing pipeline that utilizes Optical Character Recognition (OCR) and rule-based methods to reconstruct tables into structured data formats, aiming to improve the accuracy and reliability of LLMs when handling tabular content. The code is in [code.py](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/code.py) based on screenshot table images.
 
 a sample table in 'Bank tariff guide for HSBC Wealth and Personal Banking Customers':
-![a sample table](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/biao.png)
+![a sample table](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/biao.png)
 
 Follow the code through four main steps, handling each output csv in each step accordingly:  
 1. Extract and Save Text with Coordinates from the Image  
@@ -15,7 +15,7 @@ Follow the code through four main steps, handling each output csv in each step a
    
 The final result will be an organized table of your original table image saved as ```organized_table.csv```, **effectively addressing challenges such as multi-field columns, merged cells, and superscripts referencing footnotes or annotations in complex tables, which LLMs fail to recognize.**
    
-Additionally, [Knowledge extraction tools](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/Knowledge%20extraction%20tools.pdf) collects some knowledge extraction tools, including Document Parser supporting PDF (some support extractions of tables in PDF for LLM), OCR-based Document Parser supporting PDF, Layout Analysis, and other types of tools.
+Additionally, [Knowledge extraction tools](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/Knowledge%20extraction%20tools.pdf) collects some knowledge extraction tools, including Document Parser supporting PDF (some support extractions of tables in PDF for LLM), OCR-based Document Parser supporting PDF, Layout Analysis, and other types of tools.
 
 # Improvements
 
@@ -48,43 +48,43 @@ To address this limitation, I further adopt **few-shot** and **chain-of-thought 
 The answers to the following three questions correspond to cell located in the same row as the demostration, the same column as the demostration, different row and column from the demostration, respectively.   
 The first two answers are correct, but the third answer is sometimes correct and sometimes incorrect, indicating that the LLM still has limitations in accurately identifying the relative row and column positions of cells.
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/1.png)  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/2.png)  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/11.png)
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/12.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/1.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/2.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/11.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/12.png)
 
 The following two questions are the same but with different demonstrations: the demonstration for the first question is the cell (HK$60) to the right of the answer cell, while the demonstration for the second question is the cell two cells to the right of the answer cell.   
 The answer corresponds to cell located **within a merged cell** (the question was incorrectly answered (HK$60) by **GPT-4o** in a **zero-shot** style in the original report).   
 The second answer is incorrect (HK$60), and even if the first answer is correct, it might be because the demonstration helped eliminate the wrong answer.
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/13.png)
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/14.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/13.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/14.png)
 
 **2. two-shot**  
 The answer corresponding to cell in the same row as the input is also answered correctly.
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/3.png)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/3.png)
 
 [Zero-shot COT](https://arxiv.org/pdf/2205.11916) for reasoning:  
 Task-agnostic and cheap  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/4.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/4.png)  
 
 Surprisingly, it produced the correct answer and recognized the footnotes simply by adding ```"Let's think step by step"```!  
 It seems there’s no need to follow the two-step approach outlined in the original paper — it managed to succeed in just one step.  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/1.pic.jpg)
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/1.pic.jpg)
 
 [Few-shot COT](https://arxiv.org/pdf/2201.11903) for reasoning:  
 It can improve OOD generalization.  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/5.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/5.png)  
 
 The reasoning chain is correct, but it’s somewhat like cheating since both questions share the same footnotes.  
 
 Answering the following question requires a different footnote than the one used in the demonstration.  
 
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge-extraction-and-reasoning-from-complex-table-main/pics/6.png)  
+![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Knowledge%20extraction%20%26%20reasoning%20from%20complex%20table/pics/6.png)  
 
 The reasoning chain is also correct.
 
