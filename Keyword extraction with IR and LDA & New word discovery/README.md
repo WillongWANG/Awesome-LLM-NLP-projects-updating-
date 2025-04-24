@@ -72,7 +72,7 @@ A score is calculated for each candidate word to represent its likelihood of bei
 
 $$
 \boxed{
-\text{AMI} = \frac{1}{n} \log \frac{p(W)}{p(c_1) \cdots p(c_n)}
+L(W) = \log \frac{LE \cdot e^{RE} + RE \cdot e^{LE}}{|LE - RE|}
 }
 $$  
 
@@ -80,7 +80,7 @@ Since the PMI value is influenced by the length of the candidate word (longer wo
 
 $$
 \boxed{
-\text{score} = \text{AMI} + L(W)
+\text{AMI} = \frac{1}{n} \log \frac{p(W)}{p(c_1) \cdots p(c_n)}
 }
 $$  
 
@@ -88,7 +88,7 @@ Candidate word score:
 
 $$
 \boxed{
-L(W) = \log \frac{LE \cdot e^{RE} + RE \cdot e^{LE}}{|LE - RE|}
+\text{score} = \text{AMI} + L(W)
 }
 $$  
 
