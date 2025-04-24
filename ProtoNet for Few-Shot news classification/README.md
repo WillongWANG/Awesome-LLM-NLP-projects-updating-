@@ -10,7 +10,7 @@ The default setup is 4-way 5-shot in both train.py and test.py:
 
 In test.py:  
 --num_queries=5,  
---seed=10,  #7,10 may have better results  
+--seed=10,  #7, 10 may have better results  
 
 Run:  
 ```
@@ -19,3 +19,5 @@ python train.py
 ```
 python test.py
 ```
+
+Example results:  
