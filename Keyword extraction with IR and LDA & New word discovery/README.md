@@ -10,19 +10,19 @@ This program first calculates the offline idf for each word in all the files in 
 
 ### [TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf) derived from PageRank  
 ```
-Unittests in test_textrank.py
+# Unittests in test_textrank.py
 ```
 The program constructs an undirected weighted graph for TextRank using the ```words``` in ```content```, iteratively calculates, and prints the weight of each word node.
 
 ### Test and compare TFIDF & TextRank  
 ```
-Unittests in test_keyword.py
+# Unittests in test_keyword.py
 ```  
  Example results:  
 ```
-#title = ''
-#content = '新化县人民法院院长程海辉严重渎职官商勾结'
-#top_k=2
+# title = ''
+# content = '新化县人民法院院长程海辉严重渎职官商勾结'
+# top_k=2
 TextRank:
 ['严重', '院长']
 [('严重', 1.0), ('院长', 0.4975077840112475), ('渎职', 0.4965342188987376), ('新化县', 0.00038025478336170266), ('官商勾结', 0.0)]
@@ -33,7 +33,7 @@ TFIDF:
 
 ### Latent Dirichlet allocation  
 ```
-Unittests in test_topic_model.py
+# Unittests in test_topic_model.py
 ```  
 Default settings:  
 ```
@@ -47,7 +47,7 @@ First train the LDA model, and calculate the topic distribution for documents an
 ## New word discovery using [SmoothNLP](https://zhuanlan.zhihu.com/p/80385615)
 
 ```
-Unittests in test_word_discover.py
+# Unittests in test_word_discover.py
 # data_path = 'tests/test_data/sports_1000.txt' # not tokenized
 ```
 
