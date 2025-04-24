@@ -52,11 +52,11 @@ Unittests in test_word_discover.py
 ```
 
 The richness of the character combinations and their left and right neighboring characters can be represented by Entropy:  
-   \[
-   Entropy(w) = -\sum_{w_n \in W_{Neighbor}} P(w_n|w) \log_2 P(w_n|w)
-   \]
 ![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/1.png)  
 To quantify the cohesion of character combinations, Pointwise Mutual Information (PMI) is used:  
+$$  
+PMI = p(x, y) \log_2 \frac{p(x, y)}{p(x)p(y)}  
+$$ 
 ![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/2.png)  
 To determine whether a character combination is a word, both the richness of neighboring characters and the internal cohesion must be considered.  
 A score is calculated for each candidate word to represent its likelihood of being a word. To measure the richness of neighboring characters, we combine the left and right Entropy (LE, RE) into a statistical measure:  
