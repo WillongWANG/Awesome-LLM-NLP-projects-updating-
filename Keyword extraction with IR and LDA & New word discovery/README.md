@@ -31,13 +31,13 @@ TFIDF:
 [('渎职', 0.4969813299576001), ('院长', 0.4969813299576001), ('严重', 0.4969813299576001), ('官商勾结', 0.4969813299576001), ('新化县', 0.4969813299576001)]
 ```  
 
-Latent Dirichlet allocation  
+### Latent Dirichlet allocation  
 ```
 Unittests in test_topic_model.py
 ```  
 Default settings:  
 ```
-# self.seg_data_file = './tests/test_data/sports_1000_seg.txt' # tokenized document
+self.seg_data_file = './tests/test_data/sports_1000_seg.txt' # tokenized document
 # In topic_model.py, num_topics=100, epoch=10
 self.lda_model = LdaModel(corpus, num_topics=num_topics, id2word=self.lda_dict, passes=10)
 ```  
