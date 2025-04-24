@@ -52,7 +52,9 @@ Unittests in test_word_discover.py
 ```
 
 The richness of the character combinations and their left and right neighboring characters can be represented by Entropy:  
-<div style="text-align: center; font-size: larger;">$$\text{Entropy}(w) = - \sum_{w_n \in W_{\text{Neighbor}}} P(w_n|w) \log_2 P(w_n|w)$$</div>  
+<div style="text-align: center; font-size: larger;">
+$$\text{Entropy}(w) = - \sum_{w_n \in W_{\text{Neighbor}}} P(w_n|w) \log_2 P(w_n|w)$$
+</div> 
 To quantify the cohesion of character combinations, Pointwise Mutual Information (PMI) is used:  
 $$\text{PMI} = p(x, y) \log_2 \frac{p(x, y)}{p(x)p(y)}$$   
 To determine whether a character combination is a word, both the richness of neighboring characters and the internal cohesion must be considered.  
