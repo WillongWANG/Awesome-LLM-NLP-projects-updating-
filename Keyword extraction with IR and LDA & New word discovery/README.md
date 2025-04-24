@@ -1,6 +1,6 @@
 ## Keyword extraction using TFIDF, TextRank, and LDA
 
-TFIDF  
+### TFIDF  
 ```
 pip install -r requirements.txt
 # Unittests in test_tfidf.py, e.g.:
@@ -8,16 +8,17 @@ python /Applications/PyCharm.app/Contents/plugins/python/helpers/pycharm/_jb_uni
 ```  
 This program first calculates the offline idf for each word in all the files in ```tests/test_data/seg_data``` (tokenized text, with each line representing a document), and then keeps it fixed. It then calculates the tf for the words in ```words``` and finally computes and prints the tf-idf for each word.
 
-[TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf) derived from PageRank  
+### [TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf) derived from PageRank  
 ```
 Unittests in test_textrank.py
 ```
 The program constructs an undirected weighted graph for TextRank using the ```words``` in ```content```, iteratively calculates, and prints the weight of each word node.
 
+### Test and compare TFIDF & TextRank  
 ```
 Unittests in test_keyword.py
 ```  
-Test and compare TFIDF & TextRank. Example results:  
+ Example results:  
 ```
 #title = ''
 #content = '新化县人民法院院长程海辉严重渎职官商勾结'
@@ -36,7 +37,7 @@ Unittests in test_topic_model.py
 ```  
 Default settings:  
 ```
-# self.seg_data_file = './tests/test_data/sports_1000_seg.txt' 为分词后的文档
+# self.seg_data_file = './tests/test_data/sports_1000_seg.txt' # tokenized document
 # In topic_model.py, num_topics=100, epoch=10
 self.lda_model = LdaModel(corpus, num_topics=num_topics, id2word=self.lda_dict, passes=10)
 ```  
@@ -47,10 +48,13 @@ First train the LDA model, and calculate the topic distribution for documents an
 
 ```
 Unittests in test_word_discover.py
-# data_path = 'tests/test_data/sports_1000.txt' #文档不分词
+# data_path = 'tests/test_data/sports_1000.txt' # not tokenized
 ```
 
 The richness of the character combinations and their left and right neighboring characters can be represented by Entropy:  
+   \[
+   Entropy(w) = -\sum_{w_n \in W_{Neighbor}} P(w_n|w) \log_2 P(w_n|w)
+   \]
 ![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/1.png)  
 To quantify the cohesion of character combinations, Pointwise Mutual Information (PMI) is used:  
 ![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/2.png)  
