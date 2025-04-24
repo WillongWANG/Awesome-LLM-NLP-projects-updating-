@@ -55,17 +55,13 @@ The richness of the character combinations and their left and right neighboring 
 $\text{Entropy}(w) = - \sum_{w_n \in W_{\text{Neighbor}}} P(w_n|w) \log_2 P(w_n|w)$  
 To quantify the cohesion of character combinations, Pointwise Mutual Information (PMI) is used:  
 $\text{PMI} = p(x, y) \log_2 \frac{p(x, y)}{p(x)p(y)}$   
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/2.png)  
 To determine whether a character combination is a word, both the richness of neighboring characters and the internal cohesion must be considered.  
 A score is calculated for each candidate word to represent its likelihood of being a word. To measure the richness of neighboring characters, we combine the left and right Entropy (LE, RE) into a statistical measure:  
 $\text{AMI} = \frac{1}{n} \log \frac{p(W)}{p(c_1) \cdots p(c_n)}$  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/3.png)  
 Since the PMI value is influenced by the length of the candidate word (longer words tend to have higher PMI values), we use Average Mutual Information (AMI) as a measure of the word's internal cohesion:  
 $L(W) = \log \frac{LE \cdot e^{RE} + RE \cdot e^{LE}}{|LE - RE|}$  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/4.png)  
 Candidate word score:  
 $\text{score} = \text{AMI} + L(W)$  
-![](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Keyword%20extraction%20with%20IR%20and%20LDA%20%26%20New%20word%20discovery/5.png)
 
 New word examples:  
 ```
