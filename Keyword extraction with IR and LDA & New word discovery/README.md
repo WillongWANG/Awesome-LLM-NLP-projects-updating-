@@ -80,7 +80,7 @@ Since the PMI value is influenced by the length of the candidate word (longer wo
 
 $$
 \boxed{
-L(W) = \log \frac{LE \cdot e^{RE} + RE \cdot e^{LE}}{|LE - RE|}
+\text{score} = \text{AMI} + L(W)
 }
 $$  
 
@@ -88,7 +88,7 @@ Candidate word score:
 
 $$
 \boxed{
-\text{score} = \text{AMI} + L(W)
+L(W) = \log \frac{LE \cdot e^{RE} + RE \cdot e^{LE}}{|LE - RE|}
 }
 $$  
 
