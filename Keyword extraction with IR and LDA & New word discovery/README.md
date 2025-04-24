@@ -52,11 +52,9 @@ Unittests in test_word_discover.py
 ```
 
 The richness of the character combinations and their left and right neighboring characters can be represented by Entropy:  
-$$
-\boxed{
+$$\boxed{
  \text{Entropy}(w) = - \sum_{w_n \in W_{\text{Neighbor}}} P(w_n|w) \log_2 P(w_n|w)
-}
-$$  
+}$$  
 To quantify the cohesion of character combinations, Pointwise Mutual Information (PMI) is used:  
 $$
 \boxed{
