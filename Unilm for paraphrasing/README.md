@@ -29,18 +29,18 @@ Additionally, based on the following equation, the first term alone already reac
 python run_seq2seq.py
 ```
 
-default parameters:  
-`--beam_size (beam search topk): 3`
-
 After running, replace the .bin file in `model_dir/` with the .bin file generated in `output_dir/` (renamed to `pytorch_model.bin`). **This is important!**
-
-Beam search and nucleus sampling demos are in `decode_method.py`.
 
 ### Paraphrasing:
 
 ```
 python decode_seq2seq.py
 ```
+
+default parameters:  
+`--beam_size (beam search topk): 3`
+
+Beam search and nucleus sampling demos are in `decode_method.py`.
 
 paraphrasing results are in [test.json](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Unilm%20for%20paraphrasing/Unilm_finetuning/data/test.json).
 
