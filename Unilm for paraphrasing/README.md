@@ -29,6 +29,9 @@ Additionally, based on the following equation, the first term alone already reac
 python run_seq2seq.py
 ```
 
+default parameters:  
+--num_train_epochs: 1000.0
+
 After running, replace the .bin file in `model_dir/` with the .bin file generated in `output_dir/` (renamed to `pytorch_model.bin`). **This is important!**
 
 ### Paraphrasing:
