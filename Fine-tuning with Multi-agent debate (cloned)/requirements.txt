@@ -1,0 +1,6 @@
+alpaca-eval==0.5.0
+datasets
+huggingface-hub
+numpy
+openai==0.28
+pandas
