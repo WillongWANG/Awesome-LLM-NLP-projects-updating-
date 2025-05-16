@@ -15,11 +15,16 @@ python cli.py --do_train --lm_training --do_eval --method pet --model_name_or_pa
 Delete `--do_train` and `--lm_training` for evaluation only.
 
 PLM-based `xlnet` and `xlm-roberta` model are not suitable for MNLI: 
-`--model_type xlnet --model_name_or_path xlnet-large-cased --wrapper_type plm  
---model_type xlm-roberta --model_name_or_path xlm-roberta-base`
+`--model_type xlnet --model_name_or_path xlnet-large-cased --wrapper_type plm`
 
-Use SFT instead of PET (e.g. BertForSequenceClassification, no LM):  
-```python cli.py --do_train --do_eval --method sequence_classifier --model_name_or_path bert-base-uncased --model_type bert --task_name mnli/mnli-mm --no_distillation```
+`--model_type xlm-roberta --model_name_or_path xlm-roberta-base`
+
+Use Supervised Fine-Tuning instead of PET (e.g. BertForSequenceClassification, no Language Modeling):  
+
+```
+python cli.py --do_train --do_eval --method sequence_classifier --model_name_or_path bert-base-uncased --model_type bert --task_name mnli/mnli-mm --no_distillation
+```
+
 
 ### NLI for hallucination detection
 
@@ -28,6 +33,7 @@ model: fine-tuned model `textattack/bert-base-uncased-MNLI` and `roberta-large-m
 ```
 python 2.py
 ```
+
 
 ### Biases in Language Models
 
