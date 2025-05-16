@@ -1,6 +1,6 @@
 # Evaluating LLMs on Natural Language Inference, hallucination detection, and Biases
 
-The task details are in [Individual Project](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Eval%20LMs%20for%20NLI%20%26%20biaes/CSIT_Individual_Project_2025_Spring.pdf). Refer to []() for methods and experimental settings and results. The code is modified from [Pattern-Exploiting Training](https://github.com/timoschick/pet/tree/master?tab=readme-ov-file##pet-training-and-evaluation) and [CrowS-Pairs](https://github.com/nyu-mll/crows-pairs).
+The task details are in [Individual Project](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Eval%20LMs%20for%20NLI%20%26%20biaes/CSIT_Individual_Project_2025_Spring.pdf). Refer to [report](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-/blob/main/Eval%20LMs%20for%20NLI%20%26%20biaes/individual.pdf) for methods and experimental settings and results. The code is modified from [Pattern-Exploiting Training](https://github.com/timoschick/pet/tree/master?tab=readme-ov-file##pet-training-and-evaluation) and [CrowS-Pairs](https://github.com/nyu-mll/crows-pairs).
 
 ## How to run
 
