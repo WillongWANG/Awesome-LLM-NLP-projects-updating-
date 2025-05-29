@@ -1,1 +1,3 @@
-{"train_set_before_training": 0.3774261399228932, "global_step": 251, "average_loss": 1.0865838287836052, "train_set_after_training": 0.6124949707411727, "test_set_after_training": {"acc": 0.6}}
+version https://git-lfs.github.com/spec/v1
+oid sha256:688f7cdae9470529cc53aabf501821a8c1b5e09282a4a5a9329688f3921e179e
+size 194
