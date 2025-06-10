@@ -21,7 +21,8 @@ Run [train.py](https://github.com/WillongWang/Awesome-LLM-NLP-projects-updating-
 protobuf==3.20.0
 icetk
 transformers==4.27.1
-cpm_kernels peft==0.2.0
+cpm_kernels
+peft==0.2.0
 ```  
 I do not use the [chatglm6b-dddd](https://huggingface.co/yuanzhoulvpi/chatglm6b-dddd) in the orginal code as unexpected errors occur and adopt the original `THUDM/chatglm-6b` instead.  
 
